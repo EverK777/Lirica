@@ -1,6 +1,7 @@
 package com.software7.lirica.views
 
 import android.content.Context
+import android.view.View
 import android.widget.ImageView
 import com.software7.lirica.models.Lyrics
 import com.software7.lirica.models.Track
@@ -12,8 +13,6 @@ interface HomeView {
     fun onStartConnectingToService()
     fun onPagination()
     fun onPaginationSuccess(tracks:ArrayList<TrackList>,lyrics:ArrayList<Lyrics>)
-    fun onSearchFinish()
-
 
 
 }

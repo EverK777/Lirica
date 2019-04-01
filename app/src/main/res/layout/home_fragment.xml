@@ -3,64 +3,30 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"
+        android:isScrollContainer="true"
         android:layout_height="match_parent">
-
-    <LinearLayout
-            android:id="@+id/searchContainer"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_alignParentTop="true"
-            android:visibility="gone"
-            android:translationY="0dp"
-            android:elevation="4dp"
-            android:background="@color/colorPrimaryDark">
-        <ImageButton
-                android:id="@+id/cancelSearch"
-                android:layout_width="wrap_content"
-                android:background="@color/colorPrimaryDark"
-                android:tint="@color/colorAccent"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_close_black_24dp"/>
-        <EditText
-                android:id="@+id/searchTextView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:imeOptions="actionSearch"
-                android:inputType="textAutoComplete"
-                android:focusedByDefault="true"
-                android:textColor="@color/txtColor"
-                android:textColorHint="@color/txtColor"
-                android:background="@color/colorPrimaryDark"
-                android:layout_marginLeft="4dp"
-                android:hint="@string/search"/>
-
-    </LinearLayout>
-
-
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/homeRecycler"
-            android:layout_width="match_parent"
-            android:visibility="invisible"
-            android:layout_below="@+id/searchContainer"
-            android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
     <ProgressBar
             android:id="@+id/progressHome"
             android:layout_width="wrap_content"
             android:layout_centerInParent="true"
             android:layout_height="wrap_content"/>
 
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/homeRecycler"
+            android:layout_width="match_parent"
+            android:visibility="invisible"
+            android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
     <ProgressBar
             android:id="@+id/progressPagination"
-            android:layout_width="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_width="45dp"
             android:layout_marginBottom="4dp"
             android:visibility="invisible"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_height="wrap_content"/>
+            android:layout_marginTop="35dp"
+            android:layout_height="45dp"/>
 
 
 </RelativeLayout>

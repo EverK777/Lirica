@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewAnimationUtils
 import com.software7.lirica.R
 
-class CircularReveal(var targetObjectAnim: View, var containerView: View, var bar: ActionBar, var context: Context) {
+class CircularReveal(var targetObjectAnim: View, var containerView: View, var context: Context) {
     fun openAnim(){
 
         // get the center for the clipping circle
@@ -58,7 +58,6 @@ class CircularReveal(var targetObjectAnim: View, var containerView: View, var ba
 
             override fun onAnimationEnd(animation: Animator) {
                 super.onAnimationEnd(animation)
-                bar.show()
                targetObjectAnim.visibility = View.GONE
             }
         })

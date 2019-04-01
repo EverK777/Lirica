@@ -8,12 +8,60 @@
         android:background="@color/colorPrimary"
         tools:context=".ui_ux.activities.MainActivity">
 
-
+    <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:gravity="top"
+            android:layout_gravity="top"
+            app:elevation="4dp"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:elevation="4dp"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+            android:id="@+id/searchContainer"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:gravity="top"
+            android:layout_gravity="top"
+            android:visibility="invisible"
+            android:elevation="4dp"
+            android:background="@color/colorPrimaryDark">
+        <ImageButton
+                android:id="@+id/cancelSearch"
+                android:layout_width="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:tint="@color/colorAccent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close_black_24dp"/>
+        <EditText
+                android:id="@+id/searchTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:imeOptions="actionSearch"
+                android:inputType="textAutoComplete"
+                android:textColor="@color/txtColor"
+                android:textColorHint="@color/txtColor"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginLeft="4dp"
+                android:hint="@string/search"/>
+    </LinearLayout>
 
     <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/appbar"
             android:background="@color/colorPrimary"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
     </FrameLayout>
@@ -23,9 +71,9 @@
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
         android:background="@color/colorPrimaryDark"
         android:layout_gravity="bottom"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
         app:itemIconTint="@drawable/button_navigation_selector"
         app:itemTextColor="@drawable/button_navigation_selector"
         app:menu="@menu/navigation" />
